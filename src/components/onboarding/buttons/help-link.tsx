@@ -11,7 +11,7 @@ interface HelpLinkProps {
 export function HelpLink({ label }: HelpLinkProps) {
     return (
     <Link
-        href={`${basePath}/faq`}
+        href={"/faq"}
         target="_blank"
         className="flex items-center justify-center"
     >
