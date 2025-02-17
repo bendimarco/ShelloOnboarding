@@ -33,9 +33,6 @@ jobs:
           NEXT_PUBLIC_BASE_PATH: /ShelloOnboarding
         run: npm run build
 
-      - name: Export Static Site
-        run: npx next export
-
       - name: List export directory contents
         run: ls -R out
 

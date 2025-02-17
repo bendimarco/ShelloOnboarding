@@ -1,5 +1,7 @@
 import Image from "next/image";
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || ''
+
 interface ProgressIndicatorProps {
     currentStep: number;
     totalSteps: number;
@@ -9,7 +11,7 @@ interface ProgressIndicatorProps {
     return (
       <div className="flex w-[75%] mx-auto items-center gap-4">
         {/* Step counter */}
-        <Image width={64} height={12} src={"/images/shello_logo.svg"} alt={"Shello Logo"}/>
+        <Image width={64} height={12} src={`${basePath}/images/shello_logo.svg`} alt={"Shello Logo"}/>
   
         {/* Progress bar */}
         <div className="w-full bg-white/10 h-0.5 rounded-full overflow-hidden">

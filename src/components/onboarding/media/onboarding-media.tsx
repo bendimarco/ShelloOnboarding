@@ -3,6 +3,8 @@ import Image from 'next/image';
 import { ContentType } from '../../../types/index';
 import { useEffect, useRef } from 'react';
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || ''
+
 interface OnboardingMediaProps {
     contentType: ContentType;
     content: string;
@@ -11,6 +13,10 @@ interface OnboardingMediaProps {
 
 export function OnboardingMedia({ contentType, content, alt }: OnboardingMediaProps) {
   const videoRef = useRef<HTMLVideoElement>(null);
+
+  const processedContentSrc = content.startsWith('http') 
+  ? content 
+  : `${basePath}${content.startsWith('/') ? content : '/' + content}`;
 
   useEffect(() => {
     // Ensure video plays when mounted and when content changes
@@ -35,7 +41,7 @@ export function OnboardingMedia({ contentType, content, alt }: OnboardingMediaPr
       <div className="relative w-full h-full">
         {contentType === 'image' ? (
           <Image
-            src={content}
+            src={processedContentSrc}
             alt={alt}
             fill
             className="object-cover"
