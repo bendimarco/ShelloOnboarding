@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function FAQPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-black to-[#121212] text-[#D9D9D9] p-8 md:p-16 pt-8 md:pt-8">
+    <div className="min-h-screen bg-gradient-to-b from-black to-[#121212] text-[#D9D9D9] p-8 md:p-16">
       <div className="max-w-5xl lg:w-[80%] w-[100%] mx-auto">
         <Image className="mb-24" width={64} height={12} src={"/images/shello_logo.svg"} alt={"Shello Logo"}/>
         <h1 className="text-[48px] font-[500] text-white tracking-tighter leading-tight mb-8">Shello FAQs</h1>
