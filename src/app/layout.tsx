@@ -5,8 +5,8 @@ import "./global.css"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Wearable Setup",
-  description: "Onboarding experience for wearable microphone setup",
+  title: "Shello Onboarding",
+  description: "Setup and walkthrough for your Shello device",
 }
 
 export default function RootLayout({
