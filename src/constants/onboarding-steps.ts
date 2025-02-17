@@ -138,7 +138,7 @@ export const onboardingSteps: OnboardingStep[] = [
     contentType: 'image',
     content: '/images/confirm_bluetooth.png',
     actionLabel: 'Continue',
-    section: '',
+    section: 'Connecting Shello',
     backgroundColor: '#000224',
     faq: true
   },

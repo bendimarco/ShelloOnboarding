@@ -109,7 +109,7 @@ export function OnboardingStepContent({
             />
 
             <motion.p
-              className="text-white text-center text-[16px] font-[400] max-w-2xl mb-12 tracking-tight max-w-[420px]"
+              className="text-white text-center sm:text-[16px] text-[14px] font-[400] max-w-2xl mb-12 tracking-tight max-w-[420px]"
               initial={{ opacity: 0, y: 5 }}
               animate={{ opacity: 1, y: 0}}
               transition={{ delay:0.6, duration: 2.2 }}
