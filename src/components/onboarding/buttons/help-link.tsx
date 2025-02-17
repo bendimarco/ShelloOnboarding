@@ -2,8 +2,6 @@ import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { HelpCircle } from 'lucide-react'
 
-const basePath = process.env.NEXT_PUBLIC_BASE_PATH || ''
-
 interface HelpLinkProps {
     label: string;
   }
@@ -11,7 +9,7 @@ interface HelpLinkProps {
 export function HelpLink({ label }: HelpLinkProps) {
     return (
     <Link
-        href={"/faq"}
+        href="/faq"
         target="_blank"
         className="flex items-center justify-center"
     >
