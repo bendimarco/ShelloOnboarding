@@ -1,10 +1,9 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  basePath: '/ShelloOnboarding',
-  output: 'export', // Always export in production
+  output: 'export', 
   images: {
-    unoptimized: true // Required for static exports
+    unoptimized: true 
   }
 };
 
