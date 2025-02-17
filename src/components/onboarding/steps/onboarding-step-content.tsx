@@ -88,7 +88,7 @@ export function OnboardingStepContent({
               // transition={{ duration: 0.8 }}
               initial={{ opacity: 0, y: 5 }}
               animate={{ opacity: 1, y: 0}}
-              transition={{ delay:1.2, duration: 2.2 }}
+              transition={{ delay:0.6, duration: 2.2 }}
             >
               {step.section}
             </motion.div>
@@ -97,7 +97,7 @@ export function OnboardingStepContent({
               className="text-[48px] font-[500] text-white tracking-tighter leading-tight text-center mb-8"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1}}
-              transition={{ delay: 0.2, duration: 2 }}
+              transition={{ delay: 0.2, duration: 2.2 }}
             >
               {step.title}
             </motion.h1>
@@ -112,7 +112,7 @@ export function OnboardingStepContent({
               className="text-white text-center text-[16px] font-[400] max-w-2xl mb-12 tracking-tight max-w-[420px]"
               initial={{ opacity: 0, y: 5 }}
               animate={{ opacity: 1, y: 0}}
-              transition={{ delay:1.2, duration: 2.2 }}
+              transition={{ delay:0.6, duration: 2.2 }}
             >
               {step.description}
             </motion.p>
@@ -121,7 +121,7 @@ export function OnboardingStepContent({
               className="relative w-full flex justify-center items-center"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ delay: 0.6, duration: 1.2 }}
+              transition={{ delay: 0.2, duration: 2.2 }}
             >
               {!isLastStep && (
                 <div className="block">
