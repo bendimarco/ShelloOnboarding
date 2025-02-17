@@ -29,6 +29,8 @@ jobs:
         run: npm install
 
       - name: Build
+        env:
+          NEXT_PUBLIC_BASE_PATH: /ShelloOnboarding
         run: npm run build
 
       - name: Create onboarding index.html
