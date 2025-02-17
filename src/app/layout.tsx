@@ -6,7 +6,7 @@ const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
   title: "Shello Onboarding",
-  description: "A beginners guide for setting up and recording with Shello",
+  description: "Set up and start using Shello.",
 }
 
 export default function RootLayout({
