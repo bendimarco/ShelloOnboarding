@@ -51,10 +51,14 @@ export function OnboardingStepContent({
 
       <div className="relative min-h-screen flex flex-col items-center justify-center mx-auto px-6 py-12">
         <div className="absolute top-8 left-0 right-0 px-6">
-          <ProgressIndicator 
-            currentStep={currentStepIndex} 
-            totalSteps={totalSteps}
-          />
+          <div className="absolute top-8 left-0 right-0 px-6">
+            <ProgressIndicator 
+              currentStep={currentStepIndex} 
+              totalSteps={totalSteps}
+              isFirstStep={isFirstStep}
+              onBack={onBack}
+            />
+          </div>
         </div>
 
         <div className="fixed inset-0 pointer-events-none md:block hidden">
