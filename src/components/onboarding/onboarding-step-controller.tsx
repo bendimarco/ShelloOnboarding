@@ -5,6 +5,8 @@ import { useRouter, useSearchParams } from 'next/navigation'
 import { OnboardingStepContent } from './onboarding-step-content'
 import { onboardingSteps } from '../../constants/onboarding-steps'
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || ''
+
 export function OnboardingStepController() {
   const router = useRouter()
   const searchParams = useSearchParams()
@@ -25,14 +27,14 @@ export function OnboardingStepController() {
   const handleNext = () => {
     if (!isLastStep) {
       const nextIndex = currentStepIndex + 1
-      router.push(`/onboarding?step=${onboardingSteps[nextIndex].id}`)
+      router.push(`${basePath}/onboarding?step=${onboardingSteps[nextIndex].id}`)
     }
   }
 
   const handleBack = () => {
     if (!isFirstStep) {
       const prevIndex = currentStepIndex - 1
-      router.push(`/onboarding?step=${onboardingSteps[prevIndex].id}`)
+      router.push(`${basePath}/onboarding?step=${onboardingSteps[prevIndex].id}`)
     }
   }
 
