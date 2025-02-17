@@ -33,9 +33,6 @@ jobs:
           NEXT_PUBLIC_BASE_PATH: /ShelloOnboarding
         run: npm run build
 
-      - name: List export directory contents
-        run: ls -R out
-
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
@@ -44,5 +41,4 @@ jobs:
         with:
           path: ./out
 
-      - name: Deploy to GitHub Pages
-        uses: actions/deploy-pages@v4
+      - name: Deploy
