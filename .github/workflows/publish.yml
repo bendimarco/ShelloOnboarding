@@ -36,6 +36,9 @@ jobs:
         with:
           path: ./out
 
+      - name: List out directory contents
+        run: ls -R out
+
   deploy:
     needs: build
     permissions:
