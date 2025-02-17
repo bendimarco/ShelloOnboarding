@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react'
 import { useRouter, useSearchParams } from 'next/navigation'
 import { OnboardingStepContent } from './onboarding-step-content'
-import { onboardingSteps } from '../../../constants/onboarding-steps'
+import { onboardingSteps } from '../../constants/onboarding-steps'
 
 export function OnboardingStepController() {
   const router = useRouter()

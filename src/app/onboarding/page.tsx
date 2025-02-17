@@ -1,5 +1,10 @@
-import { OnboardingStepController } from '../../components/onboarding/steps/onboarding-step-controller'
+import { Suspense } from 'react'
+import { OnboardingStepController } from '../../components/onboarding/onboarding-step-controller'
 
 export default function OnboardingPage() {
-  return <OnboardingStepController />
+  return (
+    <Suspense fallback={<div className="min-h-screen bg-black" />}>
+      <OnboardingStepController />
+    </Suspense>
+  )
 }

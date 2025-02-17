@@ -1,14 +1,14 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion'
-import { OnboardingStep } from '../../../types'
-import { ProgressIndicator } from '../progress-indicator'
-import { BackgroundGradients } from '../background-gradients';
-import { OnboardingMedia } from '../media/onboarding-media';
-import { ContinueButton } from '../buttons/continue-button';
-import { useKeyboardNavigation } from '../../../hooks/use-keyboard-navigation';
+import { OnboardingStep } from '../../types'
+import { ProgressIndicator } from './progress-indicator'
+import { BackgroundGradients } from './background-gradients';
+import { OnboardingMedia } from './media/onboarding-media';
+import { ContinueButton } from './buttons/continue-button';
+import { useKeyboardNavigation } from '../../hooks/use-keyboard-navigation';
 import { useHintVisibility } from '@/hooks/use-hint-visibility';
-import { KeyboardHint } from '../keyboard/keyboard-hint';
-import { HelpLink } from '../buttons/help-link';
+import { KeyboardHint } from './keyboard/keyboard-hint';
+import { HelpLink } from './buttons/help-link';
 import { Confetti } from '@/components/effects/confetti';
 
 interface OnboardingStepContentProps {
