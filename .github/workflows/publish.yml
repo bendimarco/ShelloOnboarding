@@ -29,10 +29,15 @@ jobs:
         run: npm install
 
       - name: Build
+        env:
+          NEXT_PUBLIC_BASE_PATH: /ShelloOnboarding
         run: npm run build
 
-      - name: List .next directory contents
-        run: ls -R .next
+      - name: Export Static Site
+        run: npx next export
+
+      - name: List export directory contents
+        run: ls -R out
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
@@ -40,7 +45,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./.next 
+          path: ./out
 
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v4
