@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 interface ProgressIndicatorProps {
     currentStep: number;
     totalSteps: number;
@@ -7,10 +9,7 @@ interface ProgressIndicatorProps {
     return (
       <div className="flex w-[75%] mx-auto items-center gap-4">
         {/* Step counter */}
-        <div className="text-xs whitespace-nowrap">
-          Step {currentStep + 1} / {totalSteps}
-        </div>
-        {/* <div className="text-xs whitespace-nowrap">Shello ●</div> */}
+        <Image width={64} height={12} src={"/images/shello_logo.svg"} alt={"Shello Logo"}/>
   
         {/* Progress bar */}
         <div className="w-full bg-white/10 h-0.5 rounded-full overflow-hidden">
@@ -20,10 +19,9 @@ interface ProgressIndicatorProps {
           />
         </div>
 
-        {/* <div className="text-xs whitespace-nowrap">
+        <div className="text-xs whitespace-nowrap text-white/50">
           Step {currentStep + 1} / {totalSteps}
-        </div> */}
-         {/* <div className="text-xs whitespace-nowrap">Shello ●</div> */}
+        </div>
       </div>
     )
   }

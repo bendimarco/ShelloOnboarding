@@ -9,43 +9,41 @@ export function OnboardingStepController() {
   const router = useRouter()
   const searchParams = useSearchParams()
   const stepParam = searchParams.get('step')
-
+  
   const [currentStepIndex, setCurrentStepIndex] = useState(0)
 
-  // Handle all URL-based step updates in this effect
   useEffect(() => {
     const stepFromUrl = onboardingSteps.findIndex(step => step.id === stepParam)
     if (stepFromUrl >= 0) {
       setCurrentStepIndex(stepFromUrl)
-    } else if (!stepParam) {
-      // If no step in URL, set to first step
-      router.push(`/onboarding?step=${onboardingSteps[0].id}`)
     }
-  }, [stepParam, router])
+  }, [stepParam])
+
+  const isLastStep = currentStepIndex === onboardingSteps.length - 1
+  const isFirstStep = currentStepIndex === 0
 
   const handleNext = () => {
-    if (currentStepIndex < onboardingSteps.length - 1) {
+    if (!isLastStep) {
       const nextIndex = currentStepIndex + 1
       router.push(`/onboarding?step=${onboardingSteps[nextIndex].id}`)
-    } else {
-      router.push('/')
     }
   }
 
   const handleBack = () => {
-    if (currentStepIndex > 0) {
+    if (!isFirstStep) {
       const prevIndex = currentStepIndex - 1
       router.push(`/onboarding?step=${onboardingSteps[prevIndex].id}`)
     }
   }
 
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div className="min-h-screen bg-gray-50">
       <OnboardingStepContent 
         step={onboardingSteps[currentStepIndex]}
         onNext={handleNext}
         onBack={handleBack}
-        isFirstStep={currentStepIndex === 0}
+        isFirstStep={isFirstStep}
+        isLastStep={isLastStep}
         currentStepIndex={currentStepIndex}
         totalSteps={onboardingSteps.length}
       />

@@ -8,8 +8,9 @@ export const onboardingSteps: OnboardingStep[] = [
     contentType: 'video',
     content: '/videos/intro_spin.mp4',
     actionLabel: 'Get Started',
-    section: 'Say hello',
-    backgroundColor: '#000000'
+    section: 'Shello Onboarding',
+    backgroundColor: '#000000',
+    faq: false
   },
   {
     id: 'ready',
@@ -19,27 +20,30 @@ export const onboardingSteps: OnboardingStep[] = [
     content: '/',
     actionLabel: 'I\'m Ready',
     section: 'Getting Started',
-    backgroundColor: '#212121'
+    backgroundColor: '#212121',
+    faq: false
   },
   {
     id: 'navigation',
     title: 'Using Arrow Keys',
-    description: 'You can use your arrow keys to quickly step forward or backwards through this setup.',
+    description: 'You can use your arrow keys to quickly move forward or backwards through this setup.',
     contentType: 'none',
     content: '/',
-    actionLabel: 'Next',
+    actionLabel: 'Continue',
     section: 'Getting Started',
-    backgroundColor: '#212121'
+    backgroundColor: '#212121',
+    faq: false
   },
   {
     id: 'powering-on',
     title: 'Powering on Shello',
-    description: 'Power on Shello by pressing the large circular button on the back of the device.',
+    description: 'Power on Shello by folding up the band and pressing the large circular button on the back of the device.',
     contentType: 'video',
     content: '/videos/power_hold.mp4',
-    actionLabel: 'Next',
+    actionLabel: 'Continue',
     section: 'Getting Started',
-    backgroundColor: '#212121'
+    backgroundColor: '#212121',
+    faq: true
   },
   {
     id: 'dead',
@@ -47,19 +51,21 @@ export const onboardingSteps: OnboardingStep[] = [
     description: 'If you see a blinking red light, that means Shello needs a charge.',
     contentType: 'video',
     content: '/videos/needs_charge.mp4',
-    actionLabel: 'Next',
+    actionLabel: 'Continue',
     section: 'Getting Started',
-    backgroundColor: '#270103'
+    backgroundColor: '#270103',
+    faq: true
   },
   {
     id: 'charging',
     title: 'Charging Shello',
-    description: 'Use the USB-C cord provided to give Shello a charge.',
+    description: 'You can use the USB-C cord provided to give Shello a charge.',
     contentType: 'video',
     content: '/videos/charging_port.mp4',
-    actionLabel: 'Next',
+    actionLabel: 'Continue',
     section: 'Getting Started',
-    backgroundColor: '#012719'
+    backgroundColor: '#012719',
+    faq: true
   },
   // {
   //   id: 'wireless-charging',
@@ -77,9 +83,10 @@ export const onboardingSteps: OnboardingStep[] = [
     description: 'To confirm Shello is charging, check for a blinking green light on the battery indicator.',
     contentType: 'video',
     content: '/videos/charging.mp4',
-    actionLabel: 'Next',
+    actionLabel: 'Continue',
     section: 'Getting Started',
-    backgroundColor: '#012719'
+    backgroundColor: '#012719',
+    faq: true
   },
   {
     id: 'connecting',
@@ -87,19 +94,21 @@ export const onboardingSteps: OnboardingStep[] = [
     description: 'Now that Shello is charged and ready to go, let’s connect it to your phone.',
     contentType: 'none',
     content: '/',
-    actionLabel: 'Next',
+    actionLabel: 'Continue',
     section: '',
-    backgroundColor: '#101010'
+    backgroundColor: '#101010',
+    faq: false
   },
   {
     id: 'bluetooth',
     title: 'Bluetooth Connection',
-    description: 'Begin pairing Shello via Bluetooth by holding the power button down for 5 seconds.',
+    description: 'Begin pairing Shello via Bluetooth by holding the power button down for five seconds.',
     contentType: 'video',
     content: '/videos/bluetooth_hold.mp4',
-    actionLabel: 'Next',
+    actionLabel: 'Continue',
     section: 'Connecting Shello',
-    backgroundColor: '#010342'
+    backgroundColor: '#010342',
+    faq: true
   },
   {
     id: 'pairing-mode',
@@ -107,9 +116,10 @@ export const onboardingSteps: OnboardingStep[] = [
     description: 'When Shello is looking for your device, you will see its front light blinking blue. To cancel pairing mode, simply press the power button again.',
     contentType: 'video',
     content: '/videos/pairing_mode.mp4',
-    actionLabel: 'Next',
-    section: '',
-    backgroundColor: '#000224'
+    actionLabel: 'Continue',
+    section: 'Connecting Shello',
+    backgroundColor: '#000224',
+    faq: true
   },
   // {
   //   id: 'manual-connection',
@@ -124,172 +134,198 @@ export const onboardingSteps: OnboardingStep[] = [
   {
     id: 'confirm-connection',
     title: 'Confirm Connection',
-    description: 'You can confirm shello is connected by ______',
-    contentType: 'video',
-    content: '/videos/bluetooth_light.mp4',
-    actionLabel: 'Next',
+    description: 'You can confirm shello is connected via your device\'s Bluetooth settings.',
+    contentType: 'image',
+    content: '/images/confirm_bluetooth.png',
+    actionLabel: 'Continue',
     section: '',
-    backgroundColor: '#000224'
+    backgroundColor: '#000224',
+    faq: true
   },
   {
     id: 'youre-connected',
     title: 'Shello is Connected!',
-    description: 'Continue to walk through your first recording (Approximately five minutes)',
+    description: 'Continue to walk through your first recording. (Approximately five minutes)',
     contentType: 'video',
     content: '/videos/intro_spin.mp4',
     actionLabel: 'Walkthrough',
     section: '',
-    backgroundColor: '#000000'
+    backgroundColor: '#000000',
+    faq: false
   },
   {
     id: 'app',
     title: 'Download the Shello App',
-    description: 'To wear shello, simply fold the band and clip it to your clothing wherever feels comfortable.',
+    description: 'Scan the QR code and download the Shello app.',
     contentType: 'image',
     content: '/images/app.svg',
-    actionLabel: 'Next',
-    section: '',
-    backgroundColor: '#212121'
+    actionLabel: 'Continue',
+    section: 'Preparing to Record',
+    backgroundColor: '#212121',
+    faq: true
   },
   {
     id: 'wearing-shello',
     title: 'Wearing Shello',
-    description: 'To wear shello, simply fold the band and clip it to your clothing wherever feels comfortable.',
+    description: 'To wear Shello, simply fold down the band and clip it to your clothing wherever feels comfortable.',
     contentType: 'image',
-    content: '/',
-    actionLabel: 'Next',
-    section: '',
-    backgroundColor: '#212121'
+    content: '/images/wearing_shello.png',
+    actionLabel: 'Continue',
+    section: 'Preparing to Record',
+    backgroundColor: '#212121',
+    faq: true
   },
   {
     id: 'starting-an-interview',
     title: 'Start a New Interview',
-    description: '',
+    description: 'To start a new interview, press the white plus button at the bottom of the screen.',
     contentType: 'image',
-    content: '/',
-    actionLabel: 'Next',
-    section: '',
-    backgroundColor: '#212121'
+    content: '/images/new_interview_btn.png',
+    actionLabel: 'Continue',
+    section: 'Preparing to Record',
+    backgroundColor: '#212121',
+    faq: true
   },
   {
     id: 'input-information',
     title: 'Input Information',
-    description: '',
+    description: 'Input as much or as little information about your interview as you would like.',
     contentType: 'image',
-    content: '/images/',
-    actionLabel: 'Next',
-    section: '',
-    backgroundColor: '#212121'
+    content: '/images/input_info.png',
+    actionLabel: 'Continue',
+    section: 'Preparing to Record',
+    backgroundColor: '#212121',
+    faq: true
   },
-  {
-    id: 'create-group',
-    title: 'Create a New Group',
-    description: '',
-    contentType: 'image',
-    content: '/',
-    actionLabel: 'Next',
-    section: '',
-    backgroundColor: '#212121'
-  }, 
+  // {
+  //   id: 'create-group',
+  //   title: 'Create a New Group',
+  //   description: '',
+  //   contentType: 'image',
+  //   content: '/',
+  //   actionLabel: 'Next',
+  //   section: 'Preparing to Record',
+  //   backgroundColor: '#212121'
+  // }, 
   {
     id: 'start-recording',
     title: 'Start Recording',
-    description: '',
-    contentType: 'image',
-    content: '/',
-    actionLabel: 'Next',
+    description: 'To start recording, press the start interview button on the app, or press the record button on the side of Shello.',
+    contentType: 'video',
+    content: '/videos/start_recording.mp4',
+    actionLabel: 'Continue',
     section: 'Recording an Interview',
-    backgroundColor: '#212121'
+    backgroundColor: '#212121',
+    faq: true
   }, 
+  // {
+  //   id: 'recording-interface',
+  //   title: 'Recording Interface',
+  //   description: 'You can confirm Shello is recording via the app and the red recording indicator on Shello itself.',
+  //   contentType: 'image',
+  //   content: '/images/recording_screen.png',
+  //   actionLabel: 'Next',
+  //   section: 'Recording an Interview',
+  //   backgroundColor: '#212121'
+  // }, 
   {
     id: 'confirm-recording',
     title: 'Confirm Recording',
     description: 'You can confirm Shello is recording via the app and the red recording indicator on Shello itself.',
     contentType: 'image',
     content: '/images/recording_light.png',
-    actionLabel: 'Next',
+    actionLabel: 'Continue',
     section: 'Recording an Interview',
-    backgroundColor: '#212121'
-  }, 
-  {
-    id: 'recording-interface',
-    title: 'Recording Interface',
-    description: 'You can confirm Shello is recording via the app and the red recording indicator on Shello itself.',
-    contentType: 'image',
-    content: '/images/recording_screen.png',
-    actionLabel: 'Next',
-    section: 'Recording an Interview',
-    backgroundColor: '#212121'
+    backgroundColor: '#212121',
+    faq: true
   }, 
   {
     id: 'recording-times',
-    title: 'Recording Length and Battery Left',
-    description: 'You can confirm Shello is recording via the app and the red recording indicator on Shello itself.',
+    title: 'Recording Length and Battery',
+    description: 'You can see the current length of recording in red, and Shello\'s remaining battery time in green.',
     contentType: 'image',
     content: '/images/recording_length.png',
-    actionLabel: 'Next',
+    actionLabel: 'Continue',
     section: 'Recording an Interview',
-    backgroundColor: '#212121'
+    backgroundColor: '#212121',
+    faq: true
   }, 
   {
     id: 'live-transcription',
     title: 'Live Transcription',
-    description: 'Throughout the interview, you can see a live transcription of the conversation to make sure everything is being captured. Say something to test this yourself!',
+    description: 'Throughout the interview, you can see a live transcription of the conversation to make sure everything is being captured. Say something to test this yourself.',
     contentType: 'image',
     content: '/images/recording_transcript.png',
-    actionLabel: 'Next',
+    actionLabel: 'Continue',
     section: 'Recording an Interview',
-    backgroundColor: '#212121'
+    backgroundColor: '#212121',
+    faq: true
   }, 
   {
     id: 'bookmark-moment',
     title: 'Bookmark Moments',
-    description: 'You can Bookmark important Moments to quickly find them later.',
-    contentType: 'image',
-    content: '/images/recording_bookmark.png',
-    actionLabel: 'Next',
+    description: 'You can bookmark important moments to quickly find them later in the full transcript either via the button on the app or the bookmark button on Shello.',
+    contentType: 'video',
+    content: '/videos/recording_bookmark.mp4',
+    actionLabel: 'Continue',
     section: 'Recording an Interview',
-    backgroundColor: '#212121'
+    backgroundColor: '#212121',
+    faq: true
   }, 
   {
     id: 'stop-recording',
-    title: 'Stop Recording',
-    description: 'To stop recording, press the stop recording button.',
+    title: 'Pause and Stop Recording',
+    description: 'You can pause a recording at any time via the pause button, and when you are finished, press the stop recording button.',
     contentType: 'image',
     content: '/images/recording_stop_pause.png',
-    actionLabel: 'Next',
+    actionLabel: 'Continue',
     section: 'Recording an Interview',
-    backgroundColor: '#212121'
+    backgroundColor: '#212121',
+    faq: true
   }, 
   {
     id: 'confirm-recording-end',
     title: 'Confirm End of Recording',
     description: 'To ensure you don\'t accidentally stop your recording early, confrim your intent to stop the recording.',
     contentType: 'image',
-    content: '/',
-    actionLabel: 'Next',
+    content: '/images/confirm_recording_end.png',
+    actionLabel: 'Continue',
     section: 'Recording an Interview',
-    backgroundColor: '#212121'
+    backgroundColor: '#212121',
+    faq: true
   }, 
   {
     id: 'summary',
     title: 'Quick Summary',
-    description: 'To ensure you don\'t accidentally stop your recording early, confrim your intent to stop the recording.',
+    description: 'Shello provides a quick summary after recording, including key insights and your bookmarked moments.',
     contentType: 'image',
-    content: '/',
-    actionLabel: 'Next',
-    section: '',
-    backgroundColor: '#212121'
+    content: '/images/quick_summary.png',
+    actionLabel: 'Continue',
+    section: 'After Interview',
+    backgroundColor: '#212121',
+    faq: true
   }, 
   {
     id: 'full-transcript',
     title: 'Full Transcript with Notes',
-    description: 'To view the full interview’s transcript with notes and annotations, click the view interview button.',
+    description: 'To view the full interview’s transcript with notes and annotations, click the view full interview button.',
     contentType: 'image',
+    content: '/images/view_full_interview.png',
+    actionLabel: 'Continue',
+    section: 'After Interview',
+    backgroundColor: '#212121',
+    faq: true
+  }, 
+  {
+    id: 'end',
+    title: 'You\'re All Set!',
+    description: 'Congratulations, you are ready to start using Shello on your own.',
+    contentType: 'none',
     content: '/',
-    actionLabel: 'Next',
-    section: '',
-    backgroundColor: '#212121'
+    actionLabel: 'Continue',
+    section: 'Onboarding Complete',
+    backgroundColor: '#271F16',
+    faq: false
   }, 
   
 

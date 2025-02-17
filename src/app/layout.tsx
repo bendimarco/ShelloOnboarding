@@ -1,11 +1,11 @@
 import type { Metadata } from "next"
 import { Inter } from "next/font/google"
-import "../app/global.css"
+import "./global.css"
 
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Shello Onboarding",
+  title: "Wearable Setup",
   description: "Onboarding experience for wearable microphone setup",
 }
 
@@ -16,7 +16,16 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <head>
+        <style>{`
+          body {
+            background-color: black;
+          }
+        `}</style>
+      </head>
+      <body className={`${inter.className} bg-black`}>
+        {children}
+      </body>
     </html>
   )
 }

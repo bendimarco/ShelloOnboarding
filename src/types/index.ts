@@ -9,4 +9,5 @@ export interface OnboardingStep {
   content: string;
   actionLabel: string;
   backgroundColor: string;
+  faq: boolean;
 }

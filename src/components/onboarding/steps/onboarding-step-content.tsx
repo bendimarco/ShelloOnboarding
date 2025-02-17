@@ -1,21 +1,22 @@
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion'
 import { OnboardingStep } from '../../../types'
 import { ProgressIndicator } from '../progress-indicator'
 import { BackgroundGradients } from '../background-gradients';
 import { OnboardingMedia } from '../media/onboarding-media';
 import { ContinueButton } from '../buttons/continue-button';
-import { BackButton } from '../buttons/back-button';
 import { useKeyboardNavigation } from '../../../hooks/use-keyboard-navigation';
 import { useHintVisibility } from '@/hooks/use-hint-visibility';
 import { KeyboardHint } from '../keyboard/keyboard-hint';
-
-
+import { HelpLink } from '../buttons/help-link';
+import { Confetti } from '@/components/effects/confetti';
 
 interface OnboardingStepContentProps {
   step: OnboardingStep;
   onNext: () => void;
   onBack: () => void;
   isFirstStep: boolean;
+  isLastStep: boolean;
   currentStepIndex: number;
   totalSteps: number;
 }
@@ -25,15 +26,27 @@ export function OnboardingStepContent({
   onNext, 
   onBack,
   isFirstStep,
+  isLastStep,
   currentStepIndex,
   totalSteps
 }: OnboardingStepContentProps) {
 
   useKeyboardNavigation({ onNext, onBack, isFirstStep });
   const hintOpacity = useHintVisibility(currentStepIndex);
+  const [showConfetti, setShowConfetti] = useState(false);
+
+  useEffect(() => {
+    if (isLastStep) {
+      setShowConfetti(true);
+      // Optionally remove confetti after some time
+      const timer = setTimeout(() => setShowConfetti(false), 5000);
+      return () => clearTimeout(timer);
+    }
+  }, [isLastStep]);
 
   return (
     <div className="relative min-h-screen bg-black overflow-hidden">
+      {showConfetti && <Confetti />}
       <BackgroundGradients color={step.backgroundColor} />
 
       <div className="relative min-h-screen flex flex-col items-center justify-center mx-auto px-6 py-12">
@@ -53,13 +66,15 @@ export function OnboardingStepContent({
             />
           </div>
         )}
-        <div className="absolute right-[12%] top-1/2 -translate-y-1/2">
-          <KeyboardHint 
-            direction="next" 
-            opacity={hintOpacity}
-          />
+        {!isLastStep && (
+          <div className="absolute right-[12%] top-1/2 -translate-y-1/2">
+            <KeyboardHint 
+              direction="next" 
+              opacity={hintOpacity}
+            />
+          </div>
+        )}
         </div>
-      </div>
 
         <AnimatePresence mode="wait">
           <motion.div
@@ -108,9 +123,24 @@ export function OnboardingStepContent({
               animate={{ opacity: 1 }}
               transition={{ delay: 0.6, duration: 1.2 }}
             >
-              <ContinueButton onClick={onNext} label={step.actionLabel} />
+              {!isLastStep && (
+                <div className="block">
+                  <ContinueButton onClick={onNext} label={step.actionLabel} />
+                  {/* {step.faq && (
+                    <HelpLink label="Any questions? Click here."/>
+                  )} */}
+                </div>
+              )}
             </motion.div>
           </motion.div>
+          {isLastStep && (
+            <motion.div
+              initial={{opacity: 0}}
+              animate={{opacity: 1}}
+              transition={{ delay:3, duration: 2.2 }}>
+              <HelpLink label="Have any other questions? Click here to view Shello's FAQ."/>
+            </motion.div>
+          )}
         </AnimatePresence>
       </div>
     </div>

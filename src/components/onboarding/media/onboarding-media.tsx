@@ -58,16 +58,13 @@ export function OnboardingMedia({ contentType, content, alt }: OnboardingMediaPr
       </div>
       <div className="absolute inset-0 pointer-events-none">
         {/* Top fade */}
-        <div className="absolute top-0 left-0 right-0 h-24 bg-gradient-to-b from-black to-transparent" />
-        
+        <div className="absolute top-0 left-0 right-0 h-20 bg-gradient-to-b from-black to-transparent" />
         {/* Bottom fade */}
-        <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-black to-transparent" />
-        
+        <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-black to-transparent" />
         {/* Left fade */}
-        <div className="absolute top-0 left-0 bottom-0 w-24 bg-gradient-to-r from-black to-transparent" />
-        
+        <div className="absolute top-0 left-0 bottom-0 w-20 bg-gradient-to-r from-black to-transparent" />
         {/* Right fade */}
-        <div className="absolute top-0 right-0 bottom-0 w-24 bg-gradient-to-l from-black to-transparent" />
+        <div className="absolute top-0 right-0 bottom-0 w-20 bg-gradient-to-l from-black to-transparent" />
       </div>
     </motion.div>
   );
