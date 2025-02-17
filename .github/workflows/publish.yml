@@ -31,16 +31,27 @@ jobs:
       - name: Build
         run: npm run build
 
+      - name: Create onboarding index.html
+        run: |
+          mkdir -p out/onboarding
+          cp out/index.html out/onboarding/index.html
+
       - name: Add .nojekyll file
-        run: touch ./out/.nojekyll
+        run: |
+          touch out/.nojekyll
+          touch out/onboarding/.nojekyll
+
+      - name: List out directory contents
+        run: |
+          echo "Root directory:"
+          ls -la out
+          echo "\nOnboarding directory:"
+          ls -la out/onboarding
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./out
-
-      - name: List out directory contents
-        run: ls -R out
 
   deploy:
     needs: build

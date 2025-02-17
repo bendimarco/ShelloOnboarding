@@ -6,11 +6,6 @@ const nextConfig: NextConfig = {
     unoptimized: true 
   },
   trailingSlash: true,
-  async generateStaticParams() {
-    return [
-      { slug: ['onboarding'] }
-    ];
-  }
 };
 
 export default nextConfig;
