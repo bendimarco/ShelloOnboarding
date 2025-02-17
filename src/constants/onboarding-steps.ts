@@ -113,7 +113,7 @@ export const onboardingSteps: OnboardingStep[] = [
   {
     id: 'pairing-mode',
     title: 'Pairing Indicator',
-    description: 'When Shello is looking for your device, you will see its front light blinking blue. To cancel pairing mode, simply press the power button again.',
+    description: 'When Shello is looking for your phone, you will see its front light blinking blue. To cancel pairing mode, simply press the power button again.',
     contentType: 'video',
     content: '/videos/pairing_mode.mp4',
     actionLabel: 'Continue',
@@ -121,20 +121,21 @@ export const onboardingSteps: OnboardingStep[] = [
     backgroundColor: '#000224',
     faq: true
   },
-  // {
-  //   id: 'manual-connection',
-  //   title: 'Manual connection',
-  //   description: 'If you can’t connect via bluetooth, you can use the charging chord to manually connect shello to your device of choice',
-  //   contentType: 'image',
-  //   content: '/images/intro.png',
-  //   actionLabel: 'Ok',
-  //   section: '',
-  //   backgroundColor: '#000224'
-  // },
+  {
+    id: 'pair',
+    title: 'Connect Shello',
+    description: 'You should see Shello as a connectable device on your phone.',
+    contentType: 'image',
+    content: '/images/pairing_phone.png',
+    actionLabel: 'Continue',
+    section: 'Connecting Shello',
+    backgroundColor: '#000224',
+    faq: true
+  },
   {
     id: 'confirm-connection',
     title: 'Confirm Connection',
-    description: 'You can confirm shello is connected via your device\'s Bluetooth settings.',
+    description: 'You can confirm shello is connected via your phone\'s Bluetooth settings.',
     contentType: 'image',
     content: '/images/confirm_bluetooth.png',
     actionLabel: 'Continue',
@@ -275,7 +276,7 @@ export const onboardingSteps: OnboardingStep[] = [
   {
     id: 'stop-recording',
     title: 'Pause and Stop Recording',
-    description: 'You can pause a recording at any time via the pause button, and when you are finished, press the stop recording button.',
+    description: 'You can pause a recording at any time via the pause button. When you are finished, press the stop recording button.',
     contentType: 'image',
     content: '/images/recording_stop_pause.png',
     actionLabel: 'Continue',
