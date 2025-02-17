@@ -27,7 +27,7 @@ export function OnboardingMedia({ contentType, content, alt }: OnboardingMediaPr
 
   return (
     <motion.div
-      className="w-full max-w-[400px] aspect-square mb-12 relative h-[35vh]"
+      className="w-full max-w-[400px] aspect-square mb-12 relative sm:h-[35vh] h-[25vh]"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 2, delay: 0.2 }}

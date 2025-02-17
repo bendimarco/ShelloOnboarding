@@ -94,7 +94,7 @@ export function OnboardingStepContent({
             </motion.div>
 
             <motion.h1
-              className="text-[48px] font-[500] text-white tracking-tighter leading-tight text-center mb-8"
+              className="sm:text-[48px] text-[36px] font-[500] text-white tracking-tighter leading-tight text-center mb-8"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1}}
               transition={{ delay: 0.2, duration: 2.2 }}
@@ -137,7 +137,7 @@ export function OnboardingStepContent({
             <motion.div
               initial={{opacity: 0}}
               animate={{opacity: 1}}
-              transition={{ delay:3, duration: 2.2 }}>
+              transition={{ delay:2, duration: 2.2 }}>
               <HelpLink label="Have any other questions? Click here to view Shello's FAQ."/>
             </motion.div>
           )}

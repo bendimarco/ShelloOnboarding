@@ -18,13 +18,13 @@ export function FAQItem({ question, answer }: FAQItemProps) {
         onClick={() => setIsOpen(!isOpen)}
         className="w-full flex items-center justify-between py-4 text-left"
       >
-        <h2 className="text-[18px] font-[400] text-white tracking-tighter leading-tight text-center mb-2">{question}</h2>
+        <h2 className="sm:text-[18px] text-[14px] font-[400] text-white tracking-tighter leading-tight text-center mb-2">{question}</h2>
         {isOpen ? <Minus className="text-[#D9D9D9]/50" /> : <Plus className="text-white/50" />}
       </button>
 
       <AnimatePresence>
         {isOpen && (
-            <p className="text-[18px] font-[400] text-[#D9D9D9]/50 tracking-tighter mb-6">
+            <p className="sm:text-[18px] text-[14px] font-[400] text-[#D9D9D9]/50 tracking-tighter mb-6">
               {answer}
             </p>
         )}
