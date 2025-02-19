@@ -7,9 +7,11 @@ import { OnboardingMedia } from '../media/onboarding-media';
 import { ContinueButton } from '../buttons/continue-button';
 import { useKeyboardNavigation } from '../../../hooks/use-keyboard-navigation';
 import { useHintVisibility } from '@/hooks/use-hint-visibility';
+import { useMediaPreload } from '@/hooks/use-media-preload';
 import { KeyboardHint } from '../keyboard/keyboard-hint';
 import { HelpLink } from '../buttons/help-link';
 import { Confetti } from '@/components/effects/confetti';
+import { onboardingSteps } from '@/constants/onboarding-steps';
 
 interface OnboardingStepContentProps {
   step: OnboardingStep;
@@ -32,6 +34,7 @@ export function OnboardingStepContent({
 }: OnboardingStepContentProps) {
 
   useKeyboardNavigation({ onNext, onBack, isFirstStep });
+  useMediaPreload(currentStepIndex, onboardingSteps);
   const hintOpacity = useHintVisibility(currentStepIndex);
   const [showConfetti, setShowConfetti] = useState(false);
 

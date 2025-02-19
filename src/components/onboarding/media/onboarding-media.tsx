@@ -38,20 +38,24 @@ export function OnboardingMedia({ contentType, content, alt }: OnboardingMediaPr
             src={content}
             alt={alt}
             fill
+            priority={true}  // Forces preload of image
+            loading="eager"  // Immediately loads the image
+            sizes="(max-width: 768px) 100vw, 50vw"
             className="object-cover"
-            priority
           />
         ) : (
           <video
-            ref={videoRef}
-            className="w-full h-full object-cover"
-            autoPlay
-            playsInline
-            muted
-            loop
-            preload="metadata"
-            src={content}
-          />
+          className="w-full h-full object-cover"
+          autoPlay
+          playsInline
+          muted
+          loop
+          preload="auto"  // Forces video preload
+          src={content}
+          >
+            {/* Add a fallback poster image */}
+            <source src={content} type="video/mp4" />
+          </video>
         )}
       </div>
       <div className="absolute inset-0 pointer-events-none">
