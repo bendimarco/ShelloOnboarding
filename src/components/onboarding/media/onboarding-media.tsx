@@ -40,8 +40,6 @@ export function OnboardingMedia({ contentType, content, alt }: OnboardingMediaPr
             fill
             className="object-cover"
             priority
-            quality={100}
-            unoptimized={true}
           />
         ) : (
           <video
